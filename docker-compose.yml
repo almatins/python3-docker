@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  flask:
+    build: ./flask
+    volumes:
+      - ./src:/usr/src/app
+    ports:
+      - "8002:5000"
+    networks:
+      - dockernet
+
+networks:
+  dockernet:
+    external: true
